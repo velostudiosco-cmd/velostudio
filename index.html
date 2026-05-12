@@ -24,7 +24,6 @@
   .cursor { position: fixed; width: 8px; height: 8px; background: var(--black); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; transform: translate(-50%, -50%); }
   .cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(10,10,10,0.3); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.08s linear, width 0.2s ease, height 0.2s ease, opacity 0.2s ease; transform: translate(-50%, -50%); }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.75rem 4rem; background: rgba(250,250,248,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; animation: fadeDown 0.8s 0.2s ease forwards; }
   .nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; }
   .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
@@ -33,7 +32,6 @@
   .nav-cta { font-size: 0.75rem !important; font-weight: 500 !important; color: var(--white) !important; background: var(--black); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: opacity 0.2s !important; }
   .nav-cta:hover { opacity: 0.75 !important; }
 
-  /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 6rem; position: relative; overflow: hidden; }
   .hero-eyebrow { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
   .hero-headline { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 300; line-height: 1.05; color: var(--black); max-width: 900px; opacity: 0; animation: fadeUp 0.9s 0.55s ease forwards; }
@@ -49,17 +47,14 @@
   .scroll-line::after { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: var(--gray-600); animation: scrollLine 2s 1.5s ease-in-out infinite; }
   .hero-number { position: absolute; right: 4rem; bottom: 3rem; font-family: var(--serif); font-size: 8rem; font-weight: 300; color: var(--gray-200); line-height: 1; user-select: none; opacity: 0; animation: fadeIn 1s 1s ease forwards; }
 
-  /* MARQUEE */
   .marquee-wrap { background: var(--black); padding: 1.1rem 0; overflow: hidden; white-space: nowrap; }
   .marquee-track { display: inline-flex; animation: marquee 20s linear infinite; }
   .marquee-item { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); padding: 0 3rem; }
   .marquee-dot { color: var(--gray-600); margin: 0 -1.5rem; }
 
-  /* SECTIONS */
   section { padding: 8rem 4rem; }
   .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 1rem; }
 
-  /* PROBLEM */
   .problem { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-top: 1px solid var(--gray-200); }
   .problem-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.2; color: var(--black); }
   .problem-headline em { font-style: italic; color: var(--gray-600); }
@@ -68,7 +63,6 @@
   .stat-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--black); line-height: 1; }
   .stat-label { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gray-400); margin-top: 0.4rem; }
 
-  /* SERVICES */
   .services { border-top: 1px solid var(--gray-200); }
   .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5rem; }
   .services-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; }
@@ -83,48 +77,49 @@
 
   /* PORTFOLIO */
   .portfolio { border-top: 1px solid var(--gray-200); background: var(--gray-100); padding: 8rem 4rem; }
-  .portfolio-header { margin-bottom: 5rem; }
+  .portfolio-header { margin-bottom: 4rem; }
   .portfolio-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 0.75rem; }
   .portfolio-sub { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
-  .portfolio-note { display: inline-block; font-size: 0.7rem; color: var(--gray-400); font-style: italic; margin-top: 0.5rem; }
+  .portfolio-note { display: inline-block; font-size: 0.7rem; color: var(--gray-400); font-style: italic; margin-top: 0.4rem; }
 
-  /* CATEGORY */
-  .port-category { margin-bottom: 5rem; }
+  .port-category { margin-bottom: 4rem; }
   .port-category:last-child { margin-bottom: 0; }
-  .cat-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
-  .cat-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); }
+  .cat-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .cat-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); white-space: nowrap; }
   .cat-line { flex: 1; height: 1px; background: var(--gray-200); }
 
-  /* SOCIAL GRID - 3 cols */
-  .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-  .port-img-wrap { overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; }
-  .port-img-wrap:hover { transform: translateY(-4px); }
-  .port-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* SOCIAL GRID — 4 cols, fixed height so images show fully */
+  .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .social-img { width: 100%; border-radius: 4px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .social-img:hover { transform: translateY(-3px); }
 
-  /* EMAIL GRID - 2 cols */
-  .email-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  .email-img-wrap { overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 4px; }
-  .email-img-wrap:hover { transform: translateY(-4px); }
-  .email-img-wrap img { width: 100%; display: block; }
+  /* EMAIL GRID — 2 cols */
+  .email-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .email-img { width: 100%; border-radius: 6px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .email-img:hover { transform: translateY(-3px); }
 
-  /* SINGLE CENTERED */
-  .single-wrap { max-width: 800px; margin: 0 auto; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 4px; }
-  .single-wrap:hover { transform: translateY(-4px); }
-  .single-wrap img { width: 100%; display: block; }
+  /* ADS — 2 cols */
+  .ads-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .ad-img { width: 100%; border-radius: 4px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+  .ad-img:hover { transform: translateY(-3px); }
 
-  /* REEL WRAP - phone format centered */
+  /* SEO — centered, max width */
+  .seo-wrap { max-width: 700px; margin: 0 auto; }
+  .seo-img { width: 100%; border-radius: 6px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+  .seo-img:hover { transform: translateY(-3px); }
+
+  /* REEL — centered phone size */
   .reel-outer { display: flex; justify-content: center; }
-  .reel-wrap { width: 320px; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
-  .reel-wrap:hover { transform: translateY(-4px); }
-  .reel-wrap img { width: 100%; display: block; }
+  .reel-inner { width: 260px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
+  .reel-inner:hover { transform: translateY(-3px); }
+  .reel-img { width: 100%; display: block; }
 
-  /* RESULTS WRAP - phone centered */
+  /* RESULTS — centered, small phone */
   .results-outer { display: flex; justify-content: center; }
-  .results-wrap { width: 360px; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
-  .results-wrap:hover { transform: translateY(-4px); }
-  .results-wrap img { width: 100%; display: block; }
+  .results-inner { width: 280px; border-radius: 36px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.18); transition: transform 0.3s ease; }
+  .results-inner:hover { transform: translateY(-3px); }
+  .results-img { width: 100%; display: block; }
 
-  /* PROCESS */
   .process { border-top: 1px solid var(--gray-200); }
   .process-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 5rem; max-width: 500px; }
   .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
@@ -135,7 +130,6 @@
   .step-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--black); margin-bottom: 0.75rem; }
   .step-desc { font-size: 0.85rem; font-weight: 300; color: var(--gray-600); line-height: 1.8; }
 
-  /* SOFT PRICING */
   .soft-pricing { border-top: 1px solid var(--gray-200); background: var(--black); padding: 8rem 4rem; }
   .soft-pricing .section-label { color: var(--gray-600); }
   .soft-pricing-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
@@ -152,14 +146,12 @@
   .wyg-num { font-family: var(--serif); font-size: 0.75rem; color: var(--gray-600); font-style: italic; flex-shrink: 0; margin-top: 2px; min-width: 20px; }
   .soft-note { font-size: 0.78rem; font-weight: 300; color: var(--gray-600); line-height: 1.7; font-style: italic; }
 
-  /* CTA */
   .cta-section { border-top: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10rem 4rem; }
   .cta-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2rem; }
   .cta-headline { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.1; color: var(--black); max-width: 700px; margin-bottom: 3rem; }
   .cta-headline em { font-style: italic; color: var(--gray-400); }
   .cta-sub { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); margin-bottom: 3rem; line-height: 1.75; }
 
-  /* FOOTER */
   footer { background: var(--black); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
   .footer-links { display: flex; gap: 2rem; list-style: none; }
@@ -167,7 +159,6 @@
   .footer-links a:hover { color: var(--white); }
   .footer-copy { font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.05em; }
 
-  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -179,23 +170,22 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
-  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 1.25rem 1.5rem; }
     .nav-links { display: none; }
     section, .portfolio, .soft-pricing { padding: 5rem 1.5rem; }
     .hero { padding: 8rem 1.5rem 5rem; }
     .problem, .services-grid, .process-steps, .soft-pricing-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .social-grid { grid-template-columns: 1fr 1fr; }
-    .email-grid { grid-template-columns: 1fr; }
+    .social-grid { grid-template-columns: repeat(2, 1fr); }
+    .email-grid, .ads-grid { grid-template-columns: 1fr; }
     .hero-number { display: none; }
     .services-grid { border: none; gap: 1rem; }
     .service-item { border: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200) !important; }
     .process-step { border-right: none; border-bottom: 1px solid var(--gray-200); padding: 2rem 0 !important; }
     .process-step:last-child { border-bottom: none; }
     .services-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-    .reel-wrap { width: 260px; }
-    .results-wrap { width: 300px; }
+    .reel-inner { width: 220px; }
+    .results-inner { width: 240px; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
     body { cursor: auto; }
@@ -207,7 +197,6 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">Velo Studio</a>
   <ul class="nav-links">
@@ -218,7 +207,6 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <p class="hero-eyebrow">AI Content & Marketing — Est. 2026</p>
   <h1 class="hero-headline">Content that moves<br><em>your business</em><br>forward.</h1>
@@ -234,7 +222,6 @@
   <div class="hero-number">01</div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
     <span class="marquee-item">Social Media</span><span class="marquee-dot">·</span>
@@ -252,7 +239,6 @@
   </div>
 </div>
 
-<!-- PROBLEM -->
 <section class="problem reveal" id="about">
   <div>
     <p class="section-label">The problem</p>
@@ -269,7 +255,6 @@
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services reveal" id="services">
   <div class="services-header">
     <div>
@@ -304,41 +289,25 @@
   <div class="portfolio-header">
     <p class="section-label">Our work</p>
     <h2 class="portfolio-headline">Content built<br>to perform.</h2>
-    <p class="portfolio-sub">Sample work created across industries and platforms to demonstrate our capabilities.</p>
+    <p class="portfolio-sub">Sample work created across industries and platforms.</p>
     <span class="portfolio-note">Sample content for illustrative purposes.</span>
   </div>
 
-  <!-- SOCIAL MEDIA -->
+  <!-- SOCIAL MEDIA — 4 col grid, 2 rows, all 8 posts -->
   <div class="port-category reveal">
     <div class="cat-label">
       <span class="cat-title">Social Media</span>
       <div class="cat-line"></div>
     </div>
     <div class="social-grid">
-      <!-- Hair Pic 1 = lumiere salon mirror shot -->
-      <div class="port-img-wrap">
-        <img src="Hair Pic 1.png" alt="Hair salon Instagram post">
-      </div>
-      <!-- Hair Pic 2 = Haven Hair Studio before after -->
-      <div class="port-img-wrap">
-        <img src="Hair Pic 2.png" alt="Hair salon before and after">
-      </div>
-      <!-- Southhampton Retail Post -->
-      <div class="port-img-wrap">
-        <img src="Southhampton Retail Post.png" alt="Retail boutique Instagram post">
-      </div>
-      <!-- Gym girl dead lift pic -->
-      <div class="port-img-wrap">
-        <img src="Gym girl dead lift pic.png" alt="Gym Instagram post">
-      </div>
-      <!-- Burger Flic -->
-      <div class="port-img-wrap">
-        <img src="Burger Flic.png" alt="Restaurant Instagram post">
-      </div>
-      <!-- Chicken Linguini Pic -->
-      <div class="port-img-wrap">
-        <img src="Chicken Linguini Pic.png" alt="Restaurant Facebook post">
-      </div>
+      <img src="Hair Pic 1.png"                  alt="Hair salon Instagram post"        class="social-img">
+      <img src="Hair Pic 2.png"                  alt="Hair salon before and after"      class="social-img">
+      <img src="Southhampton Retail Post.png"    alt="Retail boutique Instagram post"   class="social-img">
+      <img src="Gym girl dead lift pic.png"      alt="Gym Instagram post"               class="social-img">
+      <img src="Burger Flic.png"                 alt="Restaurant Instagram post"        class="social-img">
+      <img src="Chicken Linguini Pic.png"        alt="Restaurant Facebook post"         class="social-img">
+      <img src="Home improvement handshake.png"  alt="Home services Facebook post"      class="social-img">
+      <img src="Kitchen side by Side.png"        alt="Kitchen renovation Facebook post" class="social-img">
     </div>
   </div>
 
@@ -349,14 +318,8 @@
       <div class="cat-line"></div>
     </div>
     <div class="email-grid">
-      <!-- Hair Salon Email Campaign -->
-      <div class="email-img-wrap">
-        <img src="Hair Salon Email Campaign.png" alt="Hair salon email campaign">
-      </div>
-      <!-- Home Improvement Email -->
-      <div class="email-img-wrap">
-        <img src="Home Improvement Email.png" alt="Home improvement email campaign">
-      </div>
+      <img src="Hair Salon Email Campaign.png" alt="Hair salon email campaign"      class="email-img">
+      <img src="Home Improvement Email.png"    alt="Home improvement email campaign" class="email-img">
     </div>
   </div>
 
@@ -366,13 +329,11 @@
       <span class="cat-title">Paid Advertising</span>
       <div class="cat-line"></div>
     </div>
-    <!-- Redone Kitchen Meta Ad -->
-    <div class="single-wrap">
-      <img src="Redone Kitchen Meta Ad.png" alt="Facebook ad mockup">
-    </div>
-    <!-- Home improvement handshake - Facebook post -->
-    <div class="single-wrap" style="margin-top:1.25rem;">
-      <img src="Home improvement handshake.png" alt="Home services Facebook post">
+    <div class="ads-grid">
+      <img src="Redone Kitchen Meta Ad.png" alt="Facebook ad mockup" class="ad-img">
+      <div style="display:flex;align-items:center;justify-content:center;background:var(--gray-200);border-radius:4px;padding:2rem;text-align:center;">
+        <p style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:var(--gray-400);font-style:italic;">More ad creative<br>coming soon.</p>
+      </div>
     </div>
   </div>
 
@@ -382,34 +343,20 @@
       <span class="cat-title">Local SEO & Google</span>
       <div class="cat-line"></div>
     </div>
-    <!-- Hair Salon Google SEO -->
-    <div class="single-wrap">
-      <img src="Hair Salon Google SEO.png" alt="Google Business profile optimization">
+    <div class="seo-wrap">
+      <img src="Hair Salon Google SEO.png" alt="Google Business profile" class="seo-img">
     </div>
   </div>
 
-  <!-- BEFORE & AFTER -->
-  <div class="port-category reveal">
-    <div class="cat-label">
-      <span class="cat-title">Before & After Content</span>
-      <div class="cat-line"></div>
-    </div>
-    <!-- Kitchen side by Side -->
-    <div class="single-wrap">
-      <img src="Kitchen side by Side.png" alt="Kitchen renovation before and after">
-    </div>
-  </div>
-
-  <!-- REELS & VIDEO -->
+  <!-- REELS -->
   <div class="port-category reveal">
     <div class="cat-label">
       <span class="cat-title">Reels & Video Content</span>
       <div class="cat-line"></div>
     </div>
-    <!-- Gym Insta Reel Cover -->
     <div class="reel-outer">
-      <div class="reel-wrap">
-        <img src="Gym Insta Reel Cover.png" alt="Instagram Reel cover frame">
+      <div class="reel-inner">
+        <img src="Gym Insta Reel Cover.png" alt="Instagram Reel cover" class="reel-img">
       </div>
     </div>
   </div>
@@ -420,17 +367,15 @@
       <span class="cat-title">Results</span>
       <div class="cat-line"></div>
     </div>
-    <!-- Results Page -->
     <div class="results-outer">
-      <div class="results-wrap">
-        <img src="Results Page.png" alt="Instagram analytics results">
+      <div class="results-inner">
+        <img src="Results Page.png" alt="Instagram analytics results" class="results-img">
       </div>
     </div>
   </div>
 
 </section>
 
-<!-- PROCESS -->
 <section class="process reveal" id="process">
   <p class="section-label">How it works</p>
   <h2 class="process-headline">Three steps.<br>Zero stress.</h2>
@@ -453,10 +398,9 @@
   </div>
 </section>
 
-<!-- SOFT PRICING -->
 <section class="soft-pricing reveal" id="pricing">
   <div class="soft-pricing-inner">
-    <div class="soft-pricing-left">
+    <div>
       <p class="section-label">Pricing</p>
       <h2 class="soft-pricing-headline">Plans built<br>around <em>your</em><br>business.</h2>
       <p class="soft-pricing-sub">Every business is different. We put together a custom plan based on what you actually need — not a one-size-fits-all package. Book a free call and we will figure out exactly what makes sense for you.</p>
@@ -470,7 +414,7 @@
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
-    <div class="soft-pricing-right">
+    <div>
       <ul class="what-you-get">
         <li><span class="wyg-num">01</span>Social media posts, graphics, and scheduling done for you every week.</li>
         <li><span class="wyg-num">02</span>Email newsletters that keep your customers coming back month after month.</li>
@@ -483,7 +427,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section reveal">
   <p class="cta-eyebrow">Ready to grow?</p>
   <h2 class="cta-headline">Let's build something<br><em>worth talking about.</em></h2>
@@ -494,7 +437,6 @@
   </a>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Velo Studio</div>
   <ul class="footer-links">
