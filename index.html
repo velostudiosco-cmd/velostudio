@@ -75,54 +75,69 @@
   .service-desc { font-size: 0.85rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; }
   .service-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); border: 1px solid var(--gray-200); padding: 0.3rem 0.7rem; border-radius: 1px; margin-top: 1.5rem; }
 
-  /* PORTFOLIO */
+  /* ── PORTFOLIO ── */
   .portfolio { border-top: 1px solid var(--gray-200); background: var(--gray-100); padding: 8rem 4rem; }
   .portfolio-header { margin-bottom: 4rem; }
   .portfolio-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 0.75rem; }
   .portfolio-sub { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
   .portfolio-note { display: inline-block; font-size: 0.7rem; color: var(--gray-400); font-style: italic; margin-top: 0.4rem; }
 
-  .port-category { margin-bottom: 4rem; }
+  .port-category { margin-bottom: 4.5rem; }
   .port-category:last-child { margin-bottom: 0; }
   .cat-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-  .cat-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); white-space: nowrap; }
+  .cat-title { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); white-space: nowrap; }
   .cat-line { flex: 1; height: 1px; background: var(--gray-200); }
 
-  /* SOCIAL GRID — 4 cols, fixed height so images show fully */
-  .social-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-  .social-img { width: 100%; border-radius: 4px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-  .social-img:hover { transform: translateY(-3px); }
+  /* SOCIAL — masonry-style using CSS columns so heights match naturally */
+  .social-masonry {
+    columns: 3;
+    column-gap: 0;
+  }
+  .social-masonry .s-item {
+    break-inside: avoid;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: opacity 0.2s;
+  }
+  .social-masonry .s-item:hover { opacity: 0.9; }
+  .social-masonry .s-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid var(--gray-100);
+  }
 
-  /* EMAIL GRID — 2 cols */
-  .email-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .email-img { width: 100%; border-radius: 6px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-  .email-img:hover { transform: translateY(-3px); }
+  /* EMAIL — 2 col, images show fully */
+  .email-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .email-grid img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.25s; }
+  .email-grid img:hover { transform: translateY(-3px); }
 
-  /* ADS — 2 cols */
-  .ads-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .ad-img { width: 100%; border-radius: 4px; display: block; transition: transform 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-  .ad-img:hover { transform: translateY(-3px); }
+  /* ADS — single centered */
+  .ad-center { display: flex; justify-content: center; }
+  .ad-center img { width: 100%; max-width: 600px; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.25s; }
+  .ad-center img:hover { transform: translateY(-3px); }
 
-  /* SEO — centered, max width */
-  .seo-wrap { max-width: 700px; margin: 0 auto; }
-  .seo-img { width: 100%; border-radius: 6px; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-  .seo-img:hover { transform: translateY(-3px); }
+  /* SEO */
+  .seo-center { display: flex; justify-content: center; }
+  .seo-center img { width: 100%; max-width: 700px; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.25s; }
+  .seo-center img:hover { transform: translateY(-3px); }
 
-  /* REEL — centered phone size */
-  .reel-outer { display: flex; justify-content: center; }
-  .reel-inner { width: 260px; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease; }
-  .reel-inner:hover { transform: translateY(-3px); }
-  .reel-img { width: 100%; display: block; }
+  /* REEL */
+  .reel-center { display: flex; justify-content: center; }
+  .reel-center img { width: 260px; height: auto; display: block; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); transition: transform 0.25s; }
+  .reel-center img:hover { transform: translateY(-3px); }
 
-  /* RESULTS — centered, small phone */
-  .results-outer { display: flex; justify-content: center; }
-  .results-inner { width: 280px; border-radius: 36px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.18); transition: transform 0.3s ease; }
-  .results-inner:hover { transform: translateY(-3px); }
-  .results-img { width: 100%; display: block; }
+  /* RESULTS */
+  .results-center { display: flex; justify-content: center; }
+  .results-center img { width: 270px; height: auto; display: block; border-radius: 36px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); transition: transform 0.25s; }
+  .results-center img:hover { transform: translateY(-3px); }
 
+  /* PROCESS */
   .process { border-top: 1px solid var(--gray-200); }
   .process-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 5rem; max-width: 500px; }
-  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+  .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); }
   .process-step { padding: 3rem 3rem 3rem 0; border-right: 1px solid var(--gray-200); }
   .process-step:last-child { border-right: none; padding-right: 0; padding-left: 3rem; }
   .process-step:nth-child(2) { padding-left: 3rem; }
@@ -130,6 +145,7 @@
   .step-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--black); margin-bottom: 0.75rem; }
   .step-desc { font-size: 0.85rem; font-weight: 300; color: var(--gray-600); line-height: 1.8; }
 
+  /* PRICING */
   .soft-pricing { border-top: 1px solid var(--gray-200); background: var(--black); padding: 8rem 4rem; }
   .soft-pricing .section-label { color: var(--gray-600); }
   .soft-pricing-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
@@ -139,13 +155,14 @@
   .soft-pricing-starting { display: inline-flex; align-items: baseline; gap: 0.5rem; margin-bottom: 2.5rem; }
   .starting-from { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-600); }
   .starting-price { font-family: var(--serif); font-size: 4rem; font-weight: 300; color: var(--white); line-height: 1; }
-  .starting-mo { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
+  .starting-mo { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
   .what-you-get { list-style: none; margin-bottom: 3rem; }
   .what-you-get li { font-size: 0.9rem; font-weight: 300; color: var(--gray-400); padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 1rem; line-height: 1.5; }
   .what-you-get li:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
   .wyg-num { font-family: var(--serif); font-size: 0.75rem; color: var(--gray-600); font-style: italic; flex-shrink: 0; margin-top: 2px; min-width: 20px; }
   .soft-note { font-size: 0.78rem; font-weight: 300; color: var(--gray-600); line-height: 1.7; font-style: italic; }
 
+  /* CTA */
   .cta-section { border-top: 1px solid var(--gray-200); display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10rem 4rem; }
   .cta-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2rem; }
   .cta-headline { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.1; color: var(--black); max-width: 700px; margin-bottom: 3rem; }
@@ -157,7 +174,7 @@
   .footer-links { display: flex; gap: 2rem; list-style: none; }
   .footer-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--white); }
-  .footer-copy { font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.05em; }
+  .footer-copy { font-size: 0.72rem; color: var(--gray-600); }
 
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
@@ -170,22 +187,20 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     nav { padding: 1.25rem 1.5rem; }
     .nav-links { display: none; }
     section, .portfolio, .soft-pricing { padding: 5rem 1.5rem; }
     .hero { padding: 8rem 1.5rem 5rem; }
     .problem, .services-grid, .process-steps, .soft-pricing-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .social-grid { grid-template-columns: repeat(2, 1fr); }
-    .email-grid, .ads-grid { grid-template-columns: 1fr; }
+    .social-masonry { columns: 2; }
+    .email-grid { grid-template-columns: 1fr; }
     .hero-number { display: none; }
     .services-grid { border: none; gap: 1rem; }
     .service-item { border: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200) !important; }
     .process-step { border-right: none; border-bottom: 1px solid var(--gray-200); padding: 2rem 0 !important; }
     .process-step:last-child { border-bottom: none; }
     .services-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-    .reel-inner { width: 220px; }
-    .results-inner { width: 240px; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
     body { cursor: auto; }
@@ -293,21 +308,21 @@
     <span class="portfolio-note">Sample content for illustrative purposes.</span>
   </div>
 
-  <!-- SOCIAL MEDIA — 4 col grid, 2 rows, all 8 posts -->
+  <!-- SOCIAL MEDIA — masonry 3 col, no gaps, full readability -->
   <div class="port-category reveal">
     <div class="cat-label">
       <span class="cat-title">Social Media</span>
       <div class="cat-line"></div>
     </div>
-    <div class="social-grid">
-      <img src="Hair Pic 1.png"                  alt="Hair salon Instagram post"        class="social-img">
-      <img src="Hair Pic 2.png"                  alt="Hair salon before and after"      class="social-img">
-      <img src="Southhampton Retail Post.png"    alt="Retail boutique Instagram post"   class="social-img">
-      <img src="Gym girl dead lift pic.png"      alt="Gym Instagram post"               class="social-img">
-      <img src="Burger Flic.png"                 alt="Restaurant Instagram post"        class="social-img">
-      <img src="Chicken Linguini Pic.png"        alt="Restaurant Facebook post"         class="social-img">
-      <img src="Home improvement handshake.png"  alt="Home services Facebook post"      class="social-img">
-      <img src="Kitchen side by Side.png"        alt="Kitchen renovation Facebook post" class="social-img">
+    <div class="social-masonry">
+      <div class="s-item"><img src="Hair Pic 1.png"                 alt="Hair salon Instagram post"></div>
+      <div class="s-item"><img src="Burger Flic.png"                alt="Restaurant Instagram post"></div>
+      <div class="s-item"><img src="Home improvement handshake.png" alt="Home services Facebook post"></div>
+      <div class="s-item"><img src="Hair Pic 2.png"                 alt="Hair salon before and after"></div>
+      <div class="s-item"><img src="Chicken Linguini Pic.png"       alt="Restaurant Facebook post"></div>
+      <div class="s-item"><img src="Kitchen side by Side.png"       alt="Kitchen renovation Facebook post"></div>
+      <div class="s-item"><img src="Southhampton Retail Post.png"   alt="Retail boutique Instagram post"></div>
+      <div class="s-item"><img src="Gym girl dead lift pic.png"     alt="Gym Instagram post"></div>
     </div>
   </div>
 
@@ -318,22 +333,19 @@
       <div class="cat-line"></div>
     </div>
     <div class="email-grid">
-      <img src="Hair Salon Email Campaign.png" alt="Hair salon email campaign"      class="email-img">
-      <img src="Home Improvement Email.png"    alt="Home improvement email campaign" class="email-img">
+      <img src="Hair Salon Email Campaign.png" alt="Hair salon email campaign">
+      <img src="Home Improvement Email.png"    alt="Home improvement email campaign">
     </div>
   </div>
 
-  <!-- PAID ADS -->
+  <!-- PAID ADS — single centered -->
   <div class="port-category reveal">
     <div class="cat-label">
       <span class="cat-title">Paid Advertising</span>
       <div class="cat-line"></div>
     </div>
-    <div class="ads-grid">
-      <img src="Redone Kitchen Meta Ad.png" alt="Facebook ad mockup" class="ad-img">
-      <div style="display:flex;align-items:center;justify-content:center;background:var(--gray-200);border-radius:4px;padding:2rem;text-align:center;">
-        <p style="font-family:var(--serif);font-size:1.1rem;font-weight:300;color:var(--gray-400);font-style:italic;">More ad creative<br>coming soon.</p>
-      </div>
+    <div class="ad-center">
+      <img src="Redone Kitchen Meta Ad.png" alt="Facebook ad mockup">
     </div>
   </div>
 
@@ -343,8 +355,8 @@
       <span class="cat-title">Local SEO & Google</span>
       <div class="cat-line"></div>
     </div>
-    <div class="seo-wrap">
-      <img src="Hair Salon Google SEO.png" alt="Google Business profile" class="seo-img">
+    <div class="seo-center">
+      <img src="Hair Salon Google SEO.png" alt="Google Business profile optimization">
     </div>
   </div>
 
@@ -354,10 +366,8 @@
       <span class="cat-title">Reels & Video Content</span>
       <div class="cat-line"></div>
     </div>
-    <div class="reel-outer">
-      <div class="reel-inner">
-        <img src="Gym Insta Reel Cover.png" alt="Instagram Reel cover" class="reel-img">
-      </div>
+    <div class="reel-center">
+      <img src="Gym Insta Reel Cover.png" alt="Instagram Reel cover frame">
     </div>
   </div>
 
@@ -367,10 +377,8 @@
       <span class="cat-title">Results</span>
       <div class="cat-line"></div>
     </div>
-    <div class="results-outer">
-      <div class="results-inner">
-        <img src="Results Page.png" alt="Instagram analytics results" class="results-img">
-      </div>
+    <div class="results-center">
+      <img src="Results Page.png" alt="Instagram analytics results">
     </div>
   </div>
 
@@ -451,18 +459,18 @@
 <script>
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
-  function animateRing() { rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateRing); }
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  function animateRing(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
   animateRing();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2.5)'; ring.style.width = '48px'; ring.style.height = '48px'; ring.style.opacity = '0.5'; });
-    el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.width = '32px'; ring.style.height = '32px'; ring.style.opacity = '1'; });
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='48px';ring.style.height='48px';ring.style.opacity='0.5';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='32px';ring.style.height='32px';ring.style.opacity='1';});
   });
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
-  window.addEventListener('scroll', () => { document.querySelector('nav').style.borderBottom = window.scrollY > 20 ? '1px solid #e8e8e4' : 'none'; });
+  const reveals=document.querySelectorAll('.reveal');
+  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.1});
+  reveals.forEach(r=>observer.observe(r));
+  window.addEventListener('scroll',()=>{document.querySelector('nav').style.borderBottom=window.scrollY>20?'1px solid #e8e8e4':'none';});
 </script>
 </body>
 </html>
