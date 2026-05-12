@@ -15,15 +15,16 @@
     --gray-200: #e8e8e4;
     --gray-400: #b0b0a8;
     --gray-600: #6e6e68;
-    --accent: #1a1a1a;
     --serif: 'Cormorant Garamond', Georgia, serif;
     --sans: 'DM Sans', system-ui, sans-serif;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--sans); background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; overflow-x: hidden; cursor: none; }
-  .cursor { position: fixed; width: 8px; height: 8px; background: var(--black); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.15s ease, opacity 0.15s ease; transform: translate(-50%, -50%); }
+  .cursor { position: fixed; width: 8px; height: 8px; background: var(--black); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.15s ease; transform: translate(-50%, -50%); }
   .cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(10,10,10,0.3); border-radius: 50%; pointer-events: none; z-index: 9998; transition: transform 0.08s linear, width 0.2s ease, height 0.2s ease, opacity 0.2s ease; transform: translate(-50%, -50%); }
+
+  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.75rem 4rem; background: rgba(250,250,248,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); opacity: 0; animation: fadeDown 0.8s 0.2s ease forwards; }
   .nav-logo { font-family: var(--serif); font-size: 1.35rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; }
   .nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
@@ -31,6 +32,8 @@
   .nav-links a:hover { color: var(--black); }
   .nav-cta { font-size: 0.75rem !important; font-weight: 500 !important; color: var(--white) !important; background: var(--black); padding: 0.6rem 1.4rem; border-radius: 2px; text-decoration: none; transition: opacity 0.2s !important; }
   .nav-cta:hover { opacity: 0.75 !important; }
+
+  /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 6rem; position: relative; overflow: hidden; }
   .hero-eyebrow { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s 0.4s ease forwards; }
   .hero-headline { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 7.5rem); font-weight: 300; line-height: 1.05; color: var(--black); max-width: 900px; opacity: 0; animation: fadeUp 0.9s 0.55s ease forwards; }
@@ -45,12 +48,18 @@
   .scroll-line { width: 40px; height: 1px; background: var(--gray-200); position: relative; overflow: hidden; }
   .scroll-line::after { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: var(--gray-600); animation: scrollLine 2s 1.5s ease-in-out infinite; }
   .hero-number { position: absolute; right: 4rem; bottom: 3rem; font-family: var(--serif); font-size: 8rem; font-weight: 300; color: var(--gray-200); line-height: 1; user-select: none; opacity: 0; animation: fadeIn 1s 1s ease forwards; }
+
+  /* MARQUEE */
   .marquee-wrap { background: var(--black); padding: 1.1rem 0; overflow: hidden; white-space: nowrap; }
   .marquee-track { display: inline-flex; animation: marquee 20s linear infinite; }
   .marquee-item { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); padding: 0 3rem; }
   .marquee-dot { color: var(--gray-600); margin: 0 -1.5rem; }
+
+  /* SECTIONS */
   section { padding: 8rem 4rem; }
   .section-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 1rem; }
+
+  /* PROBLEM */
   .problem { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-top: 1px solid var(--gray-200); }
   .problem-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.2; color: var(--black); }
   .problem-headline em { font-style: italic; color: var(--gray-600); }
@@ -58,6 +67,8 @@
   .stat-row { display: flex; gap: 3rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--gray-200); }
   .stat-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 300; color: var(--black); line-height: 1; }
   .stat-label { font-size: 0.72rem; letter-spacing: 0.08em; color: var(--gray-400); margin-top: 0.4rem; }
+
+  /* SERVICES */
   .services { border-top: 1px solid var(--gray-200); }
   .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 5rem; }
   .services-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.2; }
@@ -69,16 +80,51 @@
   .service-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--black); margin-bottom: 1rem; line-height: 1.2; }
   .service-desc { font-size: 0.85rem; font-weight: 300; color: var(--gray-600); line-height: 1.75; }
   .service-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-400); border: 1px solid var(--gray-200); padding: 0.3rem 0.7rem; border-radius: 1px; margin-top: 1.5rem; }
-  .portfolio { border-top: 1px solid var(--gray-200); background: var(--gray-100); }
-  .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
-  .portfolio-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; }
-  .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .portfolio-item { background: var(--white); border: 1px solid var(--gray-200); overflow: hidden; transition: transform 0.3s ease; }
-  .portfolio-item:hover { transform: translateY(-4px); }
-  .portfolio-img { width: 100%; aspect-ratio: 1; background: var(--gray-200); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .portfolio-img-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; padding: 2rem; font-family: var(--serif); font-size: 0.85rem; color: var(--gray-400); font-style: italic; }
-  .portfolio-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); padding: 1rem 1.25rem 0.5rem; }
-  .portfolio-caption { font-size: 0.82rem; font-weight: 300; color: var(--gray-600); line-height: 1.7; padding: 0.5rem 1.25rem 1.5rem; }
+
+  /* PORTFOLIO */
+  .portfolio { border-top: 1px solid var(--gray-200); background: var(--gray-100); padding: 8rem 4rem; }
+  .portfolio-header { margin-bottom: 5rem; }
+  .portfolio-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 0.75rem; }
+  .portfolio-sub { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
+  .portfolio-note { display: inline-block; font-size: 0.7rem; color: var(--gray-400); font-style: italic; margin-top: 0.5rem; }
+
+  /* CATEGORY */
+  .port-category { margin-bottom: 5rem; }
+  .port-category:last-child { margin-bottom: 0; }
+  .cat-label { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+  .cat-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); }
+  .cat-line { flex: 1; height: 1px; background: var(--gray-200); }
+
+  /* SOCIAL GRID - 3 cols */
+  .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .port-img-wrap { overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; }
+  .port-img-wrap:hover { transform: translateY(-4px); }
+  .port-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* EMAIL GRID - 2 cols */
+  .email-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .email-img-wrap { overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 4px; }
+  .email-img-wrap:hover { transform: translateY(-4px); }
+  .email-img-wrap img { width: 100%; display: block; }
+
+  /* SINGLE CENTERED */
+  .single-wrap { max-width: 800px; margin: 0 auto; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 4px; }
+  .single-wrap:hover { transform: translateY(-4px); }
+  .single-wrap img { width: 100%; display: block; }
+
+  /* REEL WRAP - phone format centered */
+  .reel-outer { display: flex; justify-content: center; }
+  .reel-wrap { width: 320px; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+  .reel-wrap:hover { transform: translateY(-4px); }
+  .reel-wrap img { width: 100%; display: block; }
+
+  /* RESULTS WRAP - phone centered */
+  .results-outer { display: flex; justify-content: center; }
+  .results-wrap { width: 360px; overflow: hidden; background: var(--gray-200); transition: transform 0.3s ease; border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+  .results-wrap:hover { transform: translateY(-4px); }
+  .results-wrap img { width: 100%; display: block; }
+
+  /* PROCESS */
   .process { border-top: 1px solid var(--gray-200); }
   .process-headline { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 5rem; max-width: 500px; }
   .process-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
@@ -89,11 +135,10 @@
   .step-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 300; color: var(--black); margin-bottom: 0.75rem; }
   .step-desc { font-size: 0.85rem; font-weight: 300; color: var(--gray-600); line-height: 1.8; }
 
-  /* SOFT PRICING SECTION */
+  /* SOFT PRICING */
   .soft-pricing { border-top: 1px solid var(--gray-200); background: var(--black); padding: 8rem 4rem; }
   .soft-pricing .section-label { color: var(--gray-600); }
   .soft-pricing-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center; }
-  .soft-pricing-left {}
   .soft-pricing-headline { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 1.5rem; }
   .soft-pricing-headline em { font-style: italic; color: var(--gray-600); }
   .soft-pricing-sub { font-size: 0.95rem; font-weight: 300; color: var(--gray-600); line-height: 1.85; margin-bottom: 2.5rem; max-width: 420px; }
@@ -101,7 +146,6 @@
   .starting-from { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-600); }
   .starting-price { font-family: var(--serif); font-size: 4rem; font-weight: 300; color: var(--white); line-height: 1; }
   .starting-mo { font-family: var(--sans); font-size: 0.9rem; font-weight: 300; color: var(--gray-600); }
-  .soft-pricing-right {}
   .what-you-get { list-style: none; margin-bottom: 3rem; }
   .what-you-get li { font-size: 0.9rem; font-weight: 300; color: var(--gray-400); padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: flex-start; gap: 1rem; line-height: 1.5; }
   .what-you-get li:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
@@ -114,12 +158,16 @@
   .cta-headline { font-family: var(--serif); font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.1; color: var(--black); max-width: 700px; margin-bottom: 3rem; }
   .cta-headline em { font-style: italic; color: var(--gray-400); }
   .cta-sub { font-size: 0.9rem; font-weight: 300; color: var(--gray-600); margin-bottom: 3rem; line-height: 1.75; }
+
+  /* FOOTER */
   footer { background: var(--black); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
   .footer-links { display: flex; gap: 2rem; list-style: none; }
   .footer-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--white); }
   .footer-copy { font-size: 0.72rem; color: var(--gray-600); letter-spacing: 0.05em; }
+
+  /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -130,20 +178,24 @@
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 1.25rem 1.5rem; }
     .nav-links { display: none; }
-    section { padding: 5rem 1.5rem; }
+    section, .portfolio, .soft-pricing { padding: 5rem 1.5rem; }
     .hero { padding: 8rem 1.5rem 5rem; }
-    .problem, .services-grid, .portfolio-grid, .process-steps, .soft-pricing-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .problem, .services-grid, .process-steps, .soft-pricing-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .social-grid { grid-template-columns: 1fr 1fr; }
+    .email-grid { grid-template-columns: 1fr; }
     .hero-number { display: none; }
     .services-grid { border: none; gap: 1rem; }
     .service-item { border: 1px solid var(--gray-200); border-right: 1px solid var(--gray-200) !important; }
     .process-step { border-right: none; border-bottom: 1px solid var(--gray-200); padding: 2rem 0 !important; }
     .process-step:last-child { border-bottom: none; }
-    .services-header, .portfolio-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-    .soft-pricing { padding: 5rem 1.5rem; }
-    .soft-pricing-inner { gap: 3rem; }
+    .services-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .reel-wrap { width: 260px; }
+    .results-wrap { width: 300px; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
     body { cursor: auto; }
@@ -160,7 +212,7 @@
   <a href="#" class="nav-logo">Velo Studio</a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
+    <li><a href="#work">Our Work</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="https://calendly.com/velostudiosco/30min" class="nav-cta">Book a call</a></li>
   </ul>
@@ -176,7 +228,7 @@
       Book a free call
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
-    <a href="#work" class="btn-ghost">See sample work</a>
+    <a href="#work" class="btn-ghost">See our work</a>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
   <div class="hero-number">01</div>
@@ -250,46 +302,132 @@
 <!-- PORTFOLIO -->
 <section class="portfolio reveal" id="work">
   <div class="portfolio-header">
-    <div>
-      <p class="section-label">Sample work</p>
-      <h2 class="portfolio-headline">Content built<br>to perform.</h2>
+    <p class="section-label">Our work</p>
+    <h2 class="portfolio-headline">Content built<br>to perform.</h2>
+    <p class="portfolio-sub">Sample work created across industries and platforms to demonstrate our capabilities.</p>
+    <span class="portfolio-note">Sample content for illustrative purposes.</span>
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Social Media</span>
+      <div class="cat-line"></div>
+    </div>
+    <div class="social-grid">
+      <!-- Hair Pic 1 = lumiere salon mirror shot -->
+      <div class="port-img-wrap">
+        <img src="Hair Pic 1.png" alt="Hair salon Instagram post">
+      </div>
+      <!-- Hair Pic 2 = Haven Hair Studio before after -->
+      <div class="port-img-wrap">
+        <img src="Hair Pic 2.png" alt="Hair salon before and after">
+      </div>
+      <!-- Southhampton Retail Post -->
+      <div class="port-img-wrap">
+        <img src="Southhampton Retail Post.png" alt="Retail boutique Instagram post">
+      </div>
+      <!-- Gym girl dead lift pic -->
+      <div class="port-img-wrap">
+        <img src="Gym girl dead lift pic.png" alt="Gym Instagram post">
+      </div>
+      <!-- Burger Flic -->
+      <div class="port-img-wrap">
+        <img src="Burger Flic.png" alt="Restaurant Instagram post">
+      </div>
+      <!-- Chicken Linguini Pic -->
+      <div class="port-img-wrap">
+        <img src="Chicken Linguini Pic.png" alt="Restaurant Facebook post">
+      </div>
     </div>
   </div>
-  <div class="portfolio-grid">
-    <div class="portfolio-item reveal reveal-delay-1">
-      <div class="portfolio-img">
-        <!-- REPLACE WITH: <img src="image1.jpg" alt="Salon post" style="width:100%;height:100%;object-fit:cover;"> -->
-        <div class="portfolio-img-placeholder">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b0b0a8" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Upload your Canva image here</span>
-        </div>
-      </div>
-      <div class="portfolio-tag">Salon · Instagram Post</div>
-      <p class="portfolio-caption">You sat down quiet. You left confident. That's not just a haircut. That's what we do here.</p>
+
+  <!-- EMAIL MARKETING -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Email Marketing</span>
+      <div class="cat-line"></div>
     </div>
-    <div class="portfolio-item reveal reveal-delay-2">
-      <div class="portfolio-img">
-        <!-- REPLACE WITH: <img src="image2.jpg" alt="Salon post" style="width:100%;height:100%;object-fit:cover;"> -->
-        <div class="portfolio-img-placeholder">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b0b0a8" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Upload your Canva image here</span>
-        </div>
+    <div class="email-grid">
+      <!-- Hair Salon Email Campaign -->
+      <div class="email-img-wrap">
+        <img src="Hair Salon Email Campaign.png" alt="Hair salon email campaign">
       </div>
-      <div class="portfolio-tag">Salon · Instagram Post</div>
-      <p class="portfolio-caption">Silk. Shine. Zero damage. Our keratin treatment takes 90 minutes and lasts up to five months.</p>
-    </div>
-    <div class="portfolio-item reveal reveal-delay-3">
-      <div class="portfolio-img">
-        <!-- REPLACE WITH: <img src="image3.jpg" alt="Salon post" style="width:100%;height:100%;object-fit:cover;"> -->
-        <div class="portfolio-img-placeholder">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b0b0a8" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Upload your Canva image here</span>
-        </div>
+      <!-- Home Improvement Email -->
+      <div class="email-img-wrap">
+        <img src="Home Improvement Email.png" alt="Home improvement email campaign">
       </div>
-      <div class="portfolio-tag">Salon · Instagram Post</div>
-      <p class="portfolio-caption">We've done first haircuts. Prom looks. Wedding days. And everything in between.</p>
     </div>
   </div>
+
+  <!-- PAID ADS -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Paid Advertising</span>
+      <div class="cat-line"></div>
+    </div>
+    <!-- Redone Kitchen Meta Ad -->
+    <div class="single-wrap">
+      <img src="Redone Kitchen Meta Ad.png" alt="Facebook ad mockup">
+    </div>
+    <!-- Home improvement handshake - Facebook post -->
+    <div class="single-wrap" style="margin-top:1.25rem;">
+      <img src="Home improvement handshake.png" alt="Home services Facebook post">
+    </div>
+  </div>
+
+  <!-- LOCAL SEO -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Local SEO & Google</span>
+      <div class="cat-line"></div>
+    </div>
+    <!-- Hair Salon Google SEO -->
+    <div class="single-wrap">
+      <img src="Hair Salon Google SEO.png" alt="Google Business profile optimization">
+    </div>
+  </div>
+
+  <!-- BEFORE & AFTER -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Before & After Content</span>
+      <div class="cat-line"></div>
+    </div>
+    <!-- Kitchen side by Side -->
+    <div class="single-wrap">
+      <img src="Kitchen side by Side.png" alt="Kitchen renovation before and after">
+    </div>
+  </div>
+
+  <!-- REELS & VIDEO -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Reels & Video Content</span>
+      <div class="cat-line"></div>
+    </div>
+    <!-- Gym Insta Reel Cover -->
+    <div class="reel-outer">
+      <div class="reel-wrap">
+        <img src="Gym Insta Reel Cover.png" alt="Instagram Reel cover frame">
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="port-category reveal">
+    <div class="cat-label">
+      <span class="cat-title">Results</span>
+      <div class="cat-line"></div>
+    </div>
+    <!-- Results Page -->
+    <div class="results-outer">
+      <div class="results-wrap">
+        <img src="Results Page.png" alt="Instagram analytics results">
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- PROCESS -->
@@ -361,7 +499,7 @@
   <div class="footer-logo">Velo Studio</div>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
+    <li><a href="#work">Our Work</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="mailto:velostudiosco@gmail.com">Email us</a></li>
   </ul>
